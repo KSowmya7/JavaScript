@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input filter</title>
+</head>
+<body>
+  <input type="text" id="filter" placeholder="Search for items">
+  <h2>Results:</h2>
+  <ul id="list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Tailwind CSS</li>
+    <li>GitHub</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <script>
+    const filter = document.getElementById("filter")
+    const list = document.getElementById("list").getElementsByTagName("li")
+
+    filter.addEventListener("input", function () {
+        const filterValue = filter.value.toLowerCase()
+        for (let i = 0; i < list.length; i++) {
+          const itemText = list[i].innerText.toLowerCase();
+          if (itemText.includes(filterValue)) {
+            list[i].style.display = "block"
+          } else {
+            list[i].style.display = "none"
+          }
+        }
+      })
+  </script>
+</body>
+</html>

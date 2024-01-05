@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown element</title>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+
+  <script>
+    const array = ["JavaScript", "Java", "Python", "C++"]
+    const container = document.querySelector(".container")
+    const heading = document.createElement("h2")
+    heading.innerText = "Which is your favorite Programming Language : "
+    const span = document.createElement("span")
+    const select = document.createElement("select")
+
+    array.map((data) => {
+      const option = document.createElement("option")
+      option.innerText = data
+      option.value = data
+      select.appendChild(option)
+    })
+    span.appendChild(select)
+    heading.appendChild(span)
+    container.appendChild(heading)
+  </script>
+</html>

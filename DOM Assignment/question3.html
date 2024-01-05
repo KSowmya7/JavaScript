@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <style>
+    #counter{
+      font-size: 28px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Counter</h1>
+  <button id="btn1">+</button>
+  <span id="counter">0</span>
+  <button id="btn2">-</button>
+  <script>
+    let count= 0
+    let increase = document.querySelector("#btn1")
+    let decrease= document.querySelector("#btn2")
+    let counter = document.querySelector("#counter")
+    increase.onclick= () => {
+      count+=1;
+      counter.innerHTML=count;
+    }
+    decrease.onclick= () => {
+      if (count<=0){
+      alert("Counter is going beyond 0")
+    } else
+      count-=1;
+      counter.innerHTML=count;
+    }
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Toggle</title>
+</head>
+<body>
+  <h1 id="message"></h1>
+  <button id="btn" onclick="toggleImg()">Toggle Image</button> <br> <br>
+  <img id="img" src="https://cdn.pwskills.com/assets/uploads/thumbnails/63a2ecdd88994300d47eb9ad.png" alt="image">
+
+  <script>
+    const msg= document.getElementById("message")
+    msg.innerText = "Your Image is visible."
+    // const btn = document.getElementById("btn")
+    function toggleImg(){
+      const img = document.getElementById("img")
+      if (img.style.opacity == 0){
+        img.style.opacity = 100
+        msg.innerText="Your Image is visible."
+      }
+      else {
+        img.style.opacity = 0
+        msg.innerText = "Your Image is hidden."
+      }
+    }
+  </script>
+</body>
+</html>
